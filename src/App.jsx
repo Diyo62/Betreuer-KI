@@ -27,10 +27,7 @@ export default function App() {
   };
 
   const downloadPDF = () => {
-    const doc = new jsPDF({
-      unit: "pt",
-      format: "a4"
-    });
+    const doc = new jsPDF({ unit: "pt", format: "a4" });
 
     const text = output || "Bitte zuerst den Schriftsatz generieren.";
     const lines = doc.splitTextToSize(text, 500);
@@ -43,63 +40,3 @@ export default function App() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: "#f3f4f6", padding: 24 }}>
-      <motion.h1
-        style={{ fontSize: 28, fontWeight: 800, marginBottom: 16 }}
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        Betreuer KI Assistenz – Schriftsatzgenerator
-      </motion.h1>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: 16
-        }}
-      >
-        <div style={{ background: "white", borderRadius: 16, padding: 16 }}>
-          <div style={{ display: "grid", gap: 10 }}>
-            <input
-              placeholder="Name betreute Person"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              style={{ padding: 10, borderRadius: 10, border: "1px solid #e5e7eb" }}
-            />
-
-            <input
-              placeholder="Zustaendiges Gericht"
-              value={gericht}
-              onChange={(e) => setGericht(e.target.value)}
-              style={{ padding: 10, borderRadius: 10, border: "1px solid #e5e7eb" }}
-            />
-
-            <input
-              placeholder="Aktenzeichen"
-              value={az}
-              onChange={(e) => setAz(e.target.value)}
-              style={{ padding: 10, borderRadius: 10, border: "1px solid #e5e7eb" }}
-            />
-
-            <textarea
-              placeholder="Sachverhalt / Gefaehrdung schildern"
-              value={sachverhalt}
-              onChange={(e) => setSachverhalt(e.target.value)}
-              rows={7}
-              style={{ padding: 10, borderRadius: 10, border: "1px solid #e5e7eb" }}
-            />
-
-            <button
-              onClick={generate}
-              style={{
-                padding: "10px 12px",
-                borderRadius: 12,
-                border: 0,
-                background: "#111827",
-                color: "white",
-                fontWeight: 700,
-                cursor: "pointer"
-              }}
-            >
-              Schriftsat

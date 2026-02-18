@@ -135,7 +135,7 @@ export default function App() {
           </div>
         </div>
 
-        <div style={{ background: "white", borderRadius: 16, padding: 16 }}>
+                <div style={{ background: "white", borderRadius: 16, padding: 16 }}>
           <div style={{ fontWeight: 700, marginBottom: 8 }}>Vorschau</div>
           <textarea
             value={output}

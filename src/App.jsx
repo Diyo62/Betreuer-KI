@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { jsPDF } from "jspdf";
 
 export default function App() {
   const [name, setName] = useState("");
@@ -21,6 +22,37 @@ export default function App() {
       `Ich bitte um zeitnahe gerichtliche Entscheidung.\n\n` +
       `Mit freundlichen Gruessen\n\n` +
       `Serkan Kabakci\nBerufsbetreuer`;
+    const downloadPDF = () => {
+  const doc = new jsPDF({
+    unit: "pt",
+    format: "a4"
+  });
+
+  const text = output || "Bitte zuerst den Schriftsatz generieren.";
+  const lines = doc.splitTextToSize(text, 500);
+
+  doc.setFont("times", "normal");
+  doc.setFontSize(11);
+  doc.text(lines, 50, 70);
+
+  doc.save("Schriftsatz.pdf");
+};
+<button
+  onClick={downloadPDF}
+  style={{
+    padding: "10px 12px",
+    borderRadius: 12,
+    border: 0,
+    background: "#2563eb",
+    color: "white",
+    fontWeight: 700,
+    cursor: "pointer",
+    marginTop: 8
+  }}
+>
+  PDF herunterladen
+</button>
+
 
     setOutput(text);
   };

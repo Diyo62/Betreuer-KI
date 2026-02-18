@@ -2,15 +2,16 @@
   "name": "betreuer-ki",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "vite build",
     "dev": "vite",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "framer-motion": "^10.16.4"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",

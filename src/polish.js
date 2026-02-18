@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
     const r = await client.responses.create({
       // bewusst guenstig/robust; du kannst spaeter wechseln
-      model: "gpt-4.1-mini",
+      model: "gpt-4.o-mini",
       temperature: 0.2,
       input: [
         {

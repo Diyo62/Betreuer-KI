@@ -22,39 +22,24 @@ export default function App() {
       `Ich bitte um zeitnahe gerichtliche Entscheidung.\n\n` +
       `Mit freundlichen Gruessen\n\n` +
       `Serkan Kabakci\nBerufsbetreuer`;
-    const downloadPDF = () => {
-  const doc = new jsPDF({
-    unit: "pt",
-    format: "a4"
-  });
-
-  const text = output || "Bitte zuerst den Schriftsatz generieren.";
-  const lines = doc.splitTextToSize(text, 500);
-
-  doc.setFont("times", "normal");
-  doc.setFontSize(11);
-  doc.text(lines, 50, 70);
-
-  doc.save("Schriftsatz.pdf");
-};
-<button
-  onClick={downloadPDF}
-  style={{
-    padding: "10px 12px",
-    borderRadius: 12,
-    border: 0,
-    background: "#2563eb",
-    color: "white",
-    fontWeight: 700,
-    cursor: "pointer",
-    marginTop: 8
-  }}
->
-  PDF herunterladen
-</button>
-
 
     setOutput(text);
+  };
+
+  const downloadPDF = () => {
+    const doc = new jsPDF({
+      unit: "pt",
+      format: "a4"
+    });
+
+    const text = output || "Bitte zuerst den Schriftsatz generieren.";
+    const lines = doc.splitTextToSize(text, 500);
+
+    doc.setFont("times", "normal");
+    doc.setFontSize(11);
+    doc.text(lines, 50, 70);
+
+    doc.save("Schriftsatz.pdf");
   };
 
   return (
@@ -64,10 +49,16 @@ export default function App() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        Betreuer KI Assistenz – Schriftsatzgenerator (MVP)
+        Betreuer KI Assistenz – Schriftsatzgenerator
       </motion.h1>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 16 }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          gap: 16
+        }}
+      >
         <div style={{ background: "white", borderRadius: 16, padding: 16 }}>
           <div style={{ display: "grid", gap: 10 }}>
             <input
@@ -76,18 +67,21 @@ export default function App() {
               onChange={(e) => setName(e.target.value)}
               style={{ padding: 10, borderRadius: 10, border: "1px solid #e5e7eb" }}
             />
+
             <input
               placeholder="Zustaendiges Gericht"
               value={gericht}
               onChange={(e) => setGericht(e.target.value)}
               style={{ padding: 10, borderRadius: 10, border: "1px solid #e5e7eb" }}
             />
+
             <input
               placeholder="Aktenzeichen"
               value={az}
               onChange={(e) => setAz(e.target.value)}
               style={{ padding: 10, borderRadius: 10, border: "1px solid #e5e7eb" }}
             />
+
             <textarea
               placeholder="Sachverhalt / Gefaehrdung schildern"
               value={sachverhalt}
@@ -105,24 +99,7 @@ export default function App() {
                 background: "#111827",
                 color: "white",
                 fontWeight: 700,
-                cursor: "pointer",
+                cursor: "pointer"
               }}
             >
-              Schriftsatz generieren
-            </button>
-          </div>
-        </div>
-
-        <div style={{ background: "white", borderRadius: 16, padding: 16 }}>
-          <div style={{ fontWeight: 700, marginBottom: 8 }}>Vorschau</div>
-          <textarea
-            value={output}
-            readOnly
-            rows={16}
-            style={{ width: "100%", padding: 10, borderRadius: 10, border: "1px solid #e5e7eb" }}
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
+              Schriftsat

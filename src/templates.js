@@ -31,7 +31,7 @@ export const TEMPLATES = [
         `Sachverhalt:\n` +
         `${SACHVERHALT_START}\n${f.sachverhalt || "[Sachverhalt]"}\n${SACHVERHALT_END}\n\n` +
         `Bitte bestaetigen Sie den Antragseingang und teilen Sie mir den weiteren Ablauf (Begutachtungstermin) mit.\n\n` +
-        `Mit freundlichen Gruessen\n\n` +
+        `Mit freundlichen Grüssen\n\n` +
         `${f.betreuernName || "Serkan Kabakci"}\n` +
         `Berufsbetreuer\n`
       );
@@ -39,8 +39,8 @@ export const TEMPLATES = [
   },
 
   {
-    id: "pflegegrad_hoeherstufung",
-    label: "Pflegekasse: Antrag Hoeherstufung / Neubegutachtung",
+    id: "pflegegrad_höherstufung",
+    label: "Pflegekasse: Antrag Höherstufung / Neubegutachtung",
     target: "pflegekasse",
     required: ["kasseName", "versName", "versGeb", "versNr", "sachverhalt"],
     build: (f) => {
@@ -48,15 +48,15 @@ export const TEMPLATES = [
         `${f.kasseName || "[Pflegekasse]"}\n` +
         `${f.kasseAddress || "[Adresse Pflegekasse]"}\n\n` +
         `Datum: ${todayDE()}\n\n` +
-        `Betreff: Antrag auf Hoeherstufung / Neubegutachtung Pflegegrad\n\n` +
+        `Betreff: Antrag auf Höherstufung / Neubegutachtung Pflegegrad\n\n` +
         `Versicherte Person: ${f.versName || "[Name]"}, geb. ${f.versGeb || "[TT.MM.JJJJ]"}\n` +
         `Versichertennummer: ${f.versNr || "[Nummer]"}\n\n` +
         `Sehr geehrte Damen und Herren,\n\n` +
-        `hiermit beantrage ich eine Neubegutachtung, da sich der Hilfebedarf erhoeht hat.\n\n` +
+        `hiermit beantrage ich eine Neubegutachtung, da sich der Hilfebedarf erhöht hat.\n\n` +
         `Sachverhalt:\n` +
         `${SACHVERHALT_START}\n${f.sachverhalt || "[Sachverhalt]"}\n${SACHVERHALT_END}\n\n` +
-        `Bitte bestaetigen Sie den Antragseingang und teilen Sie mir einen Begutachtungstermin mit.\n\n` +
-        `Mit freundlichen Gruessen\n\n` +
+        `Bitte bestätigen Sie den Antragseingang und teilen Sie mir einen Begutachtungstermin mit.\n\n` +
+        `Mit freundlichen Grüssen\n\n` +
         `${f.betreuernName || "Serkan Kabakci"}\n` +
         `Berufsbetreuer\n`
       );
@@ -77,12 +77,12 @@ export const TEMPLATES = [
         `Betreute Person: ${f.betreuteName || "[Name]"}, geb. ${f.betreuteGeb || "[TT.MM.JJJJ]"}\n\n` +
         `Betreff: Antrag auf Erweiterung des Aufgabenkreises\n\n` +
         `Sehr geehrte Damen und Herren,\n\n` +
-        `ich beantrage die Erweiterung des Aufgabenkreises, da die aktuelle Aufgabenabgrenzung zur ordnungsgemaessen Wahrnehmung der Betreuung nicht ausreicht.\n\n` +
+        `ich beantrage die Erweiterung des Aufgabenkreises, da die aktuelle Aufgabenabgrenzung zur ordnungsgemässen Wahrnehmung der Betreuung nicht ausreicht.\n\n` +
         `Sachverhalt:\n` +
         `${SACHVERHALT_START}\n${f.sachverhalt || "[Sachverhalt]"}\n${SACHVERHALT_END}\n\n` +
         `Beantragt wird die Aufnahme folgender Aufgabenkreise (bitte konkretisieren):\n` +
         `- [z.B. Gesundheitsfuersorge]\n- [z.B. Vermoegenssorge]\n- [z.B. Wohnungsangelegenheiten]\n\n` +
-        `Mit freundlichen Gruessen\n\n` +
+        `Mit freundlichen Grüssen\n\n` +
         `${f.betreuernName || "Serkan Kabakci"}\n` +
         `Berufsbetreuer\n`
       );
@@ -103,10 +103,10 @@ export const TEMPLATES = [
         `Betreute Person: ${f.betreuteName || "[Name]"}, geb. ${f.betreuteGeb || "[TT.MM.JJJJ]"}\n\n` +
         `Betreff: Antrag auf Aufhebung / Reduzierung des Aufgabenkreises\n\n` +
         `Sehr geehrte Damen und Herren,\n\n` +
-        `ich beantrage die Aufhebung bzw. Reduzierung des Aufgabenkreises, da die Voraussetzungen fuer eine Betreuung in diesem Umfang nicht mehr vorliegen.\n\n` +
+        `ich beantrage die Aufhebung bzw. Reduzierung des Aufgabenkreises, da die Voraussetzungen für eine Betreuung in diesem Umfang nicht mehr vorliegen.\n\n` +
         `Sachverhalt:\n` +
         `${SACHVERHALT_START}\n${f.sachverhalt || "[Sachverhalt]"}\n${SACHVERHALT_END}\n\n` +
-        `Mit freundlichen Gruessen\n\n` +
+        `Mit freundlichen Grüssen\n\n` +
         `${f.betreuernName || "Serkan Kabakci"}\n` +
         `Berufsbetreuer\n`
       );
